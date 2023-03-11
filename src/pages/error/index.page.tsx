@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Button } from "antd";
+import { useRouter } from "next/router";
 
 import LogoRed from "../../assets/LogoRed";
 import styles from "./style.module.scss";
@@ -7,6 +8,7 @@ import styles from "./style.module.scss";
 import { Message } from "../../components/Message";
 
 export default function HomePage() {
+  const router = useRouter();
   const [titles] = useState({
     description: (
       <>
@@ -29,6 +31,7 @@ export default function HomePage() {
           />
           <div>
             <Button
+              onClick={() => router.push("/")}
               className={`${styles.error__button} animate__animated animate__fadeIn`}
             >
               Volver a filtrar
