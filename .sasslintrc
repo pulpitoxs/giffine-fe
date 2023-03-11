@@ -89,12 +89,6 @@
         "convention-explanation": "block__element--modifier"
       }
     ],
-    "indentation": [
-      1,
-      {
-        "size": 2
-      }
-    ],
     "leading-zero": [
       1,
       {
@@ -105,7 +99,7 @@
     "max-line-length": [
       1,
       {
-        "length": 120
+        "length": 200
       }
     ],
     "mixin-name-format": [
