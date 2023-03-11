@@ -38,6 +38,6 @@
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "npm run lint:js",
     "*.{css,scss}": "npm run lint:css",
-    "*.{js,jsx,ts,tsx,md,html,json,css,scss}": "prettier --write ."
+    "*.{js,jsx,ts,tsx,md,html,json,css,scss}": "prettier --write"
   }
 }
