@@ -1,5 +1,43 @@
 @import "../../styles/settings/settings";
 
-.title {
-  color: $color-primary;
+.home__content {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $color-background;
+}
+
+.home__container {
+  text-align: center;
+}
+
+.home__mensagge {
+  text-align: left;
+  background: $color-mensagge;
+  border: 1px solid $color-mensagge-border;
+  border-radius: 16px;
+  padding: 16px;
+  width: 415px;
+  position: relative;
+}
+
+.home__mensagge::before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 26px solid $color-mensagge;
+  border-left: 26px solid transparent;
+  position: absolute;
+  top: 93px;
+  left: 28px;
+}
+
+.home__title {
+  color: $color-withe;
+  margin: 0;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.5em;
+  font-style: normal;
 }
