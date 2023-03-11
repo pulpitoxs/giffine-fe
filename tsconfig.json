@@ -18,6 +18,7 @@
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
     "baseUrl": "./",
+    "noUnusedLocals": true,
     "paths": {
       "@/*": ["./src/*"],
       "@common": ["./src/components"]

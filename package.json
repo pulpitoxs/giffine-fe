@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lint:js": "eslint 'src/**/*.tsx' 'src/**/*.ts' --cache --max-warnings=0",
+    "lint:js": "eslint './src/**/*.tsx' './src/**/*.ts' --cache --max-warnings=0",
     "lint:css": "sass-lint 'src/**/*.scss' 'src/**/*.css' -v -q --max-warnings=0",
     "format": "prettier --write .",
     "prepare": "husky install"
