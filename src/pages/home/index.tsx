@@ -7,6 +7,8 @@ import { Message } from "./components/Message";
 import CardSelect from "./components/CardSelect";
 
 export function HomePage() {
+  const [select, setSelect] = useState(false);
+  const [button, setButton] = useState(false);
   const [titles, setTitles] = useState({
     description: (
       <>
@@ -29,6 +31,7 @@ export function HomePage() {
         ),
         animate: "animate__bounce",
       });
+      setButton(true);
     }, 2500);
   }, []);
 
@@ -43,6 +46,10 @@ export function HomePage() {
       ),
       animate: "animate__fadeInDown",
     });
+    setButton(false);
+    setTimeout(function () {
+      setSelect(true);
+    }, 1000);
   };
 
   return (
@@ -56,14 +63,16 @@ export function HomePage() {
             height={"420"}
           />
           <div>
-            <Button
-              onClick={hanbldeBegin}
-              className={`${styles.home__button} animate__animated animate__fadeIn`}
-            >
-              Comenzar 🎁
-            </Button>
+            {button && (
+              <Button
+                onClick={hanbldeBegin}
+                className={`${styles.home__button} animate__animated animate__fadeIn`}
+              >
+                Comenzar 🎁
+              </Button>
+            )}
           </div>
-          <CardSelect title="¿Qué le gusta a esta persona?" />
+          {select && <CardSelect title="¿Qué le gusta a esta persona?" />}
         </div>
       </div>
     </>
