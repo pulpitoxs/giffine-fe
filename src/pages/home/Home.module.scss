@@ -10,34 +10,29 @@
 
 .home__container {
   text-align: center;
+  display: grid;
 }
 
-.home__mensagge {
-  text-align: left;
+.home__button {
   background: $color-mensagge;
-  border: 1px solid $color-mensagge-border;
-  border-radius: 16px;
+  border: 1px solid $color-secondary;
+  box-shadow: 0 0 50px $box-shadow-main;
+  color: $color-white;
   padding: 16px;
-  width: 415px;
-  position: relative;
-}
+  width: 190px;
+  height: 59px;
+  border-radius: 16px;
+  font-size: 18px;
+  font-family: $font-family;
 
-.home__mensagge::before {
-  content: "";
-  width: 0;
-  height: 0;
-  border-top: 26px solid $color-mensagge;
-  border-left: 26px solid transparent;
-  position: absolute;
-  top: 93px;
-  left: 28px;
-}
-
-.home__title {
-  color: $color-withe;
-  margin: 0;
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 1.5em;
-  font-style: normal;
+  &:hover {
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      $colro-blue-light 0%,
+      $color-mensagge 100%
+    );
+    border: 1px solid $colro-grey-light !important;
+    box-shadow: 0 0 50px $box-shadow-main;
+    color: $color-white !important;
+  }
 }

@@ -1,29 +1,69 @@
+import { useEffect, useState } from "react";
 import { Button } from "antd";
-import styles from "./Home.module.scss";
+
 import Logo from "../../assets/Logo";
+import styles from "./Home.module.scss";
+import { Message } from "./components/Message";
 
 export function HomePage() {
+  const [titles, setTitles] = useState({
+    description: (
+      <>
+        ¡Bienvenido(a)!, gracias por visitarme,
+        <br /> Mi nombre es Giffine.
+      </>
+    ),
+    animate: "animate__fadeIn",
+  });
+
+  useEffect(() => {
+    setTimeout(function () {
+      setTitles({
+        description: (
+          <>
+            Si necesitas ayuda para buscar un regalo
+            <br />
+            sólo haz click en el botón para comenzar.
+          </>
+        ),
+        animate: "animate__bounce",
+      });
+    }, 3000);
+  }, []);
+
+  const hanbldeBegin = () => {
+    setTitles({
+      description: (
+        <>
+          ¡Excelente! Ahora cuéntame un poco acerca
+          <br />
+          de la persona a la que quieres hacerle el regalo
+        </>
+      ),
+      animate: "animate__fadeInDown",
+    });
+  };
+
   return (
     <>
       <div className={styles.home__content}>
         <div className={styles.home__container}>
-          <div className={styles.home__mensagge}>
-            <h1 className={styles.home__title}>
-              ¡Bienvenido(a)!, gracias por visitarme,
-              <br /> Mi nombre es Giffine.
-            </h1>
+          <Message title={titles.description} classAnimete={titles.animate} />
+          <Logo
+            className="animate__animated animate__shakeY"
+            width={"100%"}
+            height={"420"}
+          />
+          <div>
+            <Button
+              onClick={hanbldeBegin}
+              className={`${styles.home__button} animate__animated animate__fadeIn`}
+            >
+              Comenzar 🎁
+            </Button>
           </div>
-          <Logo width={"476"} height={"420"} />
-          <h1 className={styles.home__title}>Home Page :D</h1>
-          <Button type="primary">Primary Button</Button>
-          <Button>Default Button</Button>
         </div>
       </div>
     </>
   );
 }
-
-/**      <h1 className={styles.home__title}>
-            ¡Excelente! Ahora cuéntame un poco acerca de la persona a la que
-            quieres hacerle el regalo
-          </h1> */
