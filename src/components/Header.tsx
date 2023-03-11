@@ -1,7 +1,3 @@
 export function Header() {
-  return (
-    <>
-      <h1>Nav Bar!!</h1>
-    </>
-  );
+  return <></>;
 }
