@@ -9,6 +9,10 @@
   padding: 20px;
 }
 
+.home__innercontent {
+  width: 100%;
+}
+
 .home__container {
   text-align: center;
   display: grid;
@@ -36,4 +40,10 @@
     box-shadow: 0 0 50px $box-shadow-main;
     color: $color-white !important;
   }
+}
+
+.home__footercontainer {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 }
