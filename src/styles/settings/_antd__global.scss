@@ -1,0 +1,29 @@
+@import "../settings/colors";
+
+.ant-select-selector {
+  border: 1px solid $color-border-input !important;
+  background-color: transparent !important;
+  color: $color-white !important;
+  position: relative;
+}
+
+.ant-select-arrow {
+  color: $color-white !important;
+}
+
+.ant-select-selection-search-input {
+  color: $color-white !important;
+}
+
+.ant-input {
+  border: 1px solid $color-border-input;
+  background-color: transparent;
+  color: $color-white;
+  height: 58px;
+}
+
+.ant-input::placeholder {
+  color: $color-input-placeholder;
+  font-size: 12px;
+  padding: 3px;
+}

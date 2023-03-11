@@ -72,7 +72,12 @@ export function HomePage() {
               </Button>
             )}
           </div>
-          {select && <CardSelect title="¿Qué le gusta a esta persona?" />}
+          {select && (
+            <CardSelect
+              title="¿Qué le gusta a esta persona?"
+              subtitle="¿Es mayor de edad esa persona?"
+            />
+          )}
         </div>
       </div>
     </>
