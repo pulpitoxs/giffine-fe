@@ -14,8 +14,13 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@common": ["./src/components"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
