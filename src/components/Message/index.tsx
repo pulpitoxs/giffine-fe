@@ -1,7 +1,11 @@
 import styles from "./style.module.scss";
 
-export function Message(props) {
-  const { title, classAnimete } = props;
+export interface MessageProps {
+  title: JSX.Element;
+  classAnimete: string;
+}
+
+export function Message({ title, classAnimete }: MessageProps) {
   return (
     <>
       <div
