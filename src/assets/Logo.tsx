@@ -1,14 +1,16 @@
 export interface model {
   width: string;
   height: string;
+  className: string;
 }
-const Logo = ({ width, height }: model) => (
+const Logo = ({ width, height, className }: model) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={width}
     height={height}
     viewBox="0 0 476 420"
     fill="none"
+    className={className}
   >
     <g filter="url(#filter0_f_19_2117)">
       <rect
