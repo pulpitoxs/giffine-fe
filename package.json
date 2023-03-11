@@ -38,7 +38,10 @@
     "sass-lint": "^1.13.1"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": "npm run lint:js",
+    "*.{js,jsx,ts,tsx}": [
+      "npm run lint:js",
+      "npm run lint"
+    ],
     "*.{css,scss}": "npm run lint:css",
     "*.{js,jsx,ts,tsx,md,html,json,css,scss}": "prettier --write"
   }
