@@ -21,7 +21,6 @@ export function HomePage() {
   });
 
   useEffect(() => {
-    console.log("type", cardForm);
     setTimeout(function () {
       setTitles({
         description: (
@@ -35,7 +34,6 @@ export function HomePage() {
       });
       setButton(true);
     }, 2500);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const hanbldeBegin = () => {
