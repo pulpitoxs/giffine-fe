@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import { Button } from "antd";
 
 import Logo from "../../assets/Logo";
-import styles from "./Home.module.scss";
+import styles from "./style.module.scss";
 import { Message } from "./components/Message";
+import CardSelect from "./components/CardSelect";
 
 export function HomePage() {
   const [titles, setTitles] = useState({
@@ -28,7 +29,7 @@ export function HomePage() {
         ),
         animate: "animate__bounce",
       });
-    }, 3000);
+    }, 2500);
   }, []);
 
   const hanbldeBegin = () => {
@@ -62,6 +63,7 @@ export function HomePage() {
               Comenzar 🎁
             </Button>
           </div>
+          <CardSelect title="¿Qué le gusta a esta persona?" />
         </div>
       </div>
     </>
