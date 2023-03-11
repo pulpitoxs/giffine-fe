@@ -1,12 +1,13 @@
 import React from "react";
 
-import { Form, Input, Select, Radio } from "antd";
+import { Form, Input, Select, Radio, FormInstance } from "antd";
 
 import styles from "./style.module.scss";
 
 export interface CardSelectProps {
   title: string;
   subtitle: string;
+  cardForm: FormInstance;
 }
 
 export interface CardFormProps {
@@ -14,7 +15,11 @@ export interface CardFormProps {
   description: string;
 }
 
-export default function CardSelect({ title, subtitle }: CardSelectProps) {
+export default function CardSelect({
+  title,
+  subtitle,
+  cardForm,
+}: CardSelectProps) {
   const { Option } = Select;
 
   const selectOptions = [
@@ -28,26 +33,19 @@ export default function CardSelect({ title, subtitle }: CardSelectProps) {
     },
   ];
 
-  const handleFinishForm = (item: CardFormProps) => {
-    console.log("item...", item);
-  };
-
-  const handleFormError = (error: unknown) => {
-    console.log("error...", error);
-  };
-
   return (
     <div className={styles.card__container}>
       <Form
         className={styles.form__container}
-        name="basic"
+        name="card_select"
         style={{ width: "100%" }}
         labelCol={{ span: 8 }}
         wrapperCol={{ span: 24 }}
-        initialValues={{ country: "⚽ CL", description: "" }}
-        onFinish={handleFinishForm}
-        onFinishFailed={handleFormError}
+        initialValues={{ country: "chile", description: "" }}
+        //onFinish={handleFinishForm}
+        //onFinishFailed={handleFormError}
         autoComplete="off"
+        form={cardForm}
       >
         <div className={styles.card__contenttitle}>
           <div className={styles.card__title}>{title}</div>
@@ -84,14 +82,26 @@ export default function CardSelect({ title, subtitle }: CardSelectProps) {
             placeholder="Ejemplo: a esta persona le encanta el anime, sobretodo pokemón y Dragon ball, también es programador, tengo un presupuesto de hasta 100$"
             maxLength={100}
           />
-          <div>
-            <div className={styles.card__subtitle}>{subtitle}</div>
-            <div>
-              <Radio defaultChecked={false}>Disabled</Radio>
-              <Radio defaultChecked>Disabled</Radio>
-            </div>
-          </div>
-        </Form.Item>
+        </Form.Item>{" "}
+        <div className={styles.card__selectcontainer}>
+          <div className={styles.card__subtitle}>{subtitle}</div>
+          <Form.Item
+            wrapperCol={{ span: 20 }}
+            style={{ width: "100%" }}
+            name="adult"
+            rules={[
+              {
+                required: true,
+                message: "Please select...",
+              },
+            ]}
+          >
+            <Radio.Group>
+              <Radio value={false}>No</Radio>
+              <Radio value={true}>Si</Radio>
+            </Radio.Group>
+          </Form.Item>
+        </div>
       </Form>
     </div>
   );
