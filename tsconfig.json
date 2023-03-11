@@ -21,7 +21,8 @@
     "noUnusedLocals": true,
     "paths": {
       "@/*": ["./src/*"],
-      "@common": ["./src/components"]
+      "@components": ["./src/components"],
+      "@styles/*": ["./styles/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
