@@ -7,7 +7,8 @@
   background-color: $card-select-container;
   box-shadow: 0 4px 30px 0 $color-shadow;
   border-radius: 16px;
-  width: fit-content;
+  width: 100%;
+  max-width: 550px;
   margin: auto;
   padding: 24px;
 }
@@ -16,6 +17,8 @@
   display: flex;
   flex-direction: row;
   align-items: flex-start;
+  width: 100%;
+  justify-content: space-between;
 }
 
 .card__title {
@@ -26,4 +29,12 @@
   font-size: 16px;
   line-height: 20px;
   margin-right: 50px;
+}
+
+.card__subtitle {
+  color: $color-white;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
 }

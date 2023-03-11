@@ -1,11 +1,12 @@
 import React from "react";
 
-import { Form, Input, Select, Button } from "antd";
+import { Form, Input, Select, Radio } from "antd";
 
 import styles from "./style.module.scss";
 
 export interface CardSelectProps {
   title: string;
+  subtitle: string;
 }
 
 export interface CardFormProps {
@@ -13,7 +14,7 @@ export interface CardFormProps {
   description: string;
 }
 
-export default function CardSelect({ title }: CardSelectProps) {
+export default function CardSelect({ title, subtitle }: CardSelectProps) {
   const { Option } = Select;
 
   const selectOptions = [
@@ -38,11 +39,12 @@ export default function CardSelect({ title }: CardSelectProps) {
   return (
     <div className={styles.card__container}>
       <Form
+        className={styles.form__container}
         name="basic"
+        style={{ width: "100%" }}
         labelCol={{ span: 8 }}
-        wrapperCol={{ span: 16 }}
-        style={{ maxWidth: 600 }}
-        initialValues={{ remember: true }}
+        wrapperCol={{ span: 24 }}
+        initialValues={{ country: "⚽ CL", description: "" }}
         onFinish={handleFinishForm}
         onFinishFailed={handleFormError}
         autoComplete="off"
@@ -50,7 +52,7 @@ export default function CardSelect({ title }: CardSelectProps) {
         <div className={styles.card__contenttitle}>
           <div className={styles.card__title}>{title}</div>
           <Form.Item
-            style={{ width: "125px" }}
+            style={{ width: "85px" }}
             name="country"
             rules={[
               {
@@ -59,7 +61,7 @@ export default function CardSelect({ title }: CardSelectProps) {
               },
             ]}
           >
-            <Select defaultValue="⚽ CL" placeholder="Country" allowClear>
+            <Select placeholder="Country">
               {selectOptions.map((item, index) => (
                 <Option value={item.value} key={index}>
                   {item.label}
@@ -69,6 +71,7 @@ export default function CardSelect({ title }: CardSelectProps) {
           </Form.Item>
         </div>
         <Form.Item
+          style={{ width: "100%" }}
           name="description"
           rules={[
             {
@@ -77,12 +80,17 @@ export default function CardSelect({ title }: CardSelectProps) {
             },
           ]}
         >
-          <Input.TextArea showCount maxLength={100} />
-        </Form.Item>
-        <Form.Item>
-          <Button type="primary" htmlType="submit">
-            Register
-          </Button>
+          <Input.TextArea
+            placeholder="Ejemplo: a esta persona le encanta el anime, sobretodo pokemón y Dragon ball, también es programador, tengo un presupuesto de hasta 100$"
+            maxLength={100}
+          />
+          <div>
+            <div className={styles.card__subtitle}>{subtitle}</div>
+            <div>
+              <Radio defaultChecked={false}>Disabled</Radio>
+              <Radio defaultChecked>Disabled</Radio>
+            </div>
+          </div>
         </Form.Item>
       </Form>
     </div>

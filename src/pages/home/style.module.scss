@@ -1,11 +1,12 @@
 @import "../../styles/settings/settings";
 
 .home__content {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   background: $color-background;
+  padding: 20px;
 }
 
 .home__container {
@@ -20,6 +21,7 @@
   padding: 16px;
   width: 415px;
   position: relative;
+  margin: auto;
 }
 
 .home__mensagge::before {
