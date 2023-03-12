@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import { Button, Form } from "antd";
-
+import Image from "next/image";
 import { useRouter } from "next/router";
 
-import Logo from "../../assets/Logo";
 import Arrows from "../../assets/Arrows";
 import styles from "./style.module.scss";
 
@@ -74,10 +73,11 @@ export function HomePage() {
         <div className={styles.home__container}>
           <div className={styles.home__innercontainer}>
             <Message title={titles.description} classAnimete={titles.animate} />
-            <Logo
-              className="animate__animated animate__shakeY"
-              width={"100%"}
-              height={"420"}
+            <Image
+              src="https://i.ibb.co/m04C4bY/cara2.gif"
+              alt="Landscape picture"
+              width={476}
+              height={420}
             />
             <div>
               {button && (
