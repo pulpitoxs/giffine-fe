@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Col, Row, Button } from "antd";
-
+import Confetti from "react-confetti";
 import Image from "next/image";
+import { useWindowSize } from "@react-hook/window-size";
 
 import styles from "./style.module.scss";
 
@@ -15,6 +16,7 @@ import { useRouter } from "next/router";
 import { fetchRequestGiftApi } from "../api";
 
 export default function Results() {
+  const [width, height] = useWindowSize();
   const router = useRouter();
   const [loading, setLoading] = useState(true);
   const [loadingSuccess, setLoadingSuccess] = useState(true);
@@ -83,6 +85,7 @@ export default function Results() {
       <div className={styles.results__content}>
         <Row>
           <Col span={16}>
+            <Confetti width={width * 0.66} height={height} />
             <div className={styles.results__mensaggecontent}>
               <div className={styles.results__mensaggecontainer}>
                 <Message
