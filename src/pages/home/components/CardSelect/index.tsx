@@ -27,15 +27,13 @@ export default function CardSelect({
   const selectOptions = [
     {
       label: "⚽ CL",
-      value: "chile",
+      value: "MLC",
     },
     {
-      label: "⚽ VE",
-      value: "venezuela",
+      label: "⚽ AR",
+      value: "MLA",
     },
   ];
-
-  console.log("aaererewrwea");
 
   return (
     <div className={styles.card__container}>
@@ -45,7 +43,11 @@ export default function CardSelect({
         style={{ width: "100%" }}
         labelCol={{ span: 8 }}
         wrapperCol={{ span: 24 }}
-        initialValues={{ country: "chile", description: "" }}
+        initialValues={{
+          country: "MLC",
+          description: "quiero regalar una galaxia entera",
+          adult: true,
+        }}
         //onFinish={handleFinishForm}
         //onFinishFailed={handleFormError}
         autoComplete="off"
