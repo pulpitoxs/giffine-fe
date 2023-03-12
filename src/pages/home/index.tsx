@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Button, Form } from "antd";
 
-import { useMutation } from "react-query";
+import { useRouter } from "next/router";
 
 import Logo from "../../assets/Logo";
 import styles from "./style.module.scss";
@@ -9,9 +9,8 @@ import styles from "./style.module.scss";
 import { Message } from "../../components/Message";
 import CardSelect from "./components/CardSelect";
 
-import { fetchRequestGiftApi } from "../api/";
-
 export function HomePage() {
+  const router = useRouter();
   const [cardForm] = Form.useForm();
   const [select, setSelect] = useState(true);
   const [button, setButton] = useState(false);
@@ -60,24 +59,12 @@ export function HomePage() {
   };
 
   const handleCardSelect = () => {
-    cardForm.validateFields().then((r) => {
-      console.log("r...", r);
-      const request = `${r.description}, además soy de ${
-        r.country
-      } y actualmente ${r.adult ? "soy" : "no soy"} mayor de edad`;
-      console.log("request...", request);
-      mutate(request);
+    cardForm.validateFields().then((response) => {
+      router.push(
+        `/results?older=${response.adult}&country=${response.country}&likes=${response.description}`
+      );
     });
   };
-
-  const { mutate, isLoading } = useMutation(fetchRequestGiftApi, {
-    onSuccess: (response) => {
-      console.log("success...", response);
-    },
-    onError: (error) => {
-      console.log("error...", error);
-    },
-  });
 
   return (
     <>
@@ -117,7 +104,6 @@ export function HomePage() {
           <div className={styles.home__footercontainer}>
             <Button onClick={() => cardForm.resetFields()}>Reiniciar</Button>
             <Button
-              loading={isLoading}
               style={{
                 opacity: `${!opacityButton ? "0.1!important" : "1!important"}`,
                 transition: "0.6s ease",

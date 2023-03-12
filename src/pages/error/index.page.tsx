@@ -10,12 +10,7 @@ import { Message } from "../../components/Message";
 export default function HomePage() {
   const router = useRouter();
   const [titles] = useState({
-    description: (
-      <>
-        ¡Lo siento! pero no debo mostrar contenido
-        <br /> inapropiada a menores de edad!
-      </>
-    ),
+    description: <>{router.query.message}</>,
     animate: "animate__fadeIn",
   });
 

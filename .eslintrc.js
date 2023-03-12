@@ -20,5 +20,6 @@ module.exports = {
   rules: {
     "security/detect-object-injection": "off",
     "react/react-in-jsx-scope": "off",
+    "@typescript-eslint/no-explicit-any": ["off"],
   },
 };
