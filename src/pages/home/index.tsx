@@ -12,7 +12,7 @@ import CardSelect from "./components/CardSelect";
 export function HomePage() {
   const router = useRouter();
   const [cardForm] = Form.useForm();
-  const [select, setSelect] = useState(true);
+  const [select, setSelect] = useState(false);
   const [button, setButton] = useState(false);
   const [opacityButton, setOpacityButton] = useState(false);
   const [titles, setTitles] = useState({

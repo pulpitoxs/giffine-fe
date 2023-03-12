@@ -4,13 +4,13 @@
 const { version } = require("./package.json");
 
 const nextConfig = {
-  reactStrictMode: true,
+  reactStrictMode: false,
   pageExtensions: ["page.tsx", "page.ts"],
   publicRuntimeConfig: {
     version,
   },
   images: {
-    domains: ["i.ibb.co"], //your-external-link-hostname
+    domains: ["i.ibb.co", "http2.mlstatic.com"], //your-external-link-hostname
   },
 };
 
