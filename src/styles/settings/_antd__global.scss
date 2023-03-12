@@ -5,6 +5,9 @@
   background-color: transparent !important;
   color: $color-white !important;
   position: relative;
+  border-radius: 16px !important;
+  border-style: solid;
+  border-width: 26px 26px 27px 27px;
 }
 
 .ant-select-arrow {
@@ -20,6 +23,7 @@
   background-color: transparent;
   color: $color-white;
   height: 58px;
+  border-radius: 8px;
 }
 
 .ant-input::placeholder {
