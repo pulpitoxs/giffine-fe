@@ -5,9 +5,12 @@ import Image from "next/image";
 import styles from "./style.module.scss";
 
 import { Message } from "../../components/Message";
+import { Loading } from "./components/Loading";
+import { LoadingOk } from "./components/LoadingOk";
 import Logo from "../../assets/Logo";
 
 export default function Results() {
+  const isLoading = false;
   const [titles] = useState({
     description: (
       <>
@@ -50,6 +53,14 @@ export default function Results() {
       id: "3333234343",
     },
   ];
+
+  if (isLoading) {
+    return <Loading />;
+  }
+
+  if (data) {
+    return <LoadingOk />;
+  }
 
   return (
     <>

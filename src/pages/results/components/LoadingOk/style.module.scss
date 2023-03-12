@@ -1,0 +1,20 @@
+@import "../../../../styles/settings/settings";
+
+.loading__content {
+  min-height: 100vh;
+  background: $color-background;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $color-white;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.loading__icon {
+  margin-bottom: -100px;
+}
+
+.loading__container {
+  display: grid;
+}
