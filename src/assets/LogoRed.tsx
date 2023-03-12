@@ -92,7 +92,7 @@ const LogoRed = ({ width, height, className }: model) => (
         height="46.5168"
         transform="matrix(1 -0.000733365 -0.000733365 -1 100.223 147.511)"
         stroke="url(#paint5_radial_45_3743)"
-        stroke-width="3"
+        strokeWidth="3"
       />
     </g>
     <g filter="url(#filter7_ii_45_3743)">
@@ -115,7 +115,7 @@ const LogoRed = ({ width, height, className }: model) => (
         width="425.12"
         height="364.165"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
         <feFlood flood-opacity="0" result="BackgroundImageFix" />
         <feBlend
@@ -422,8 +422,8 @@ const LogoRed = ({ width, height, className }: model) => (
         y2="320.915"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#E16349" stop-opacity="0.5" />
-        <stop offset="1" stop-color="#E16349" />
+        <stop stopColor="#E16349" stopOpacity="0.5" />
+        <stop offset="1" stopColor="#E16349" />
       </linearGradient>
       <radialGradient
         id="paint1_radial_45_3743"
@@ -433,9 +433,9 @@ const LogoRed = ({ width, height, className }: model) => (
         gradientUnits="userSpaceOnUse"
         gradientTransform="translate(335.982 313.18) rotate(-144.764) scale(108.53 188.626)"
       >
-        <stop stop-color="#D9D9D9" />
-        <stop offset="0.0001" stop-color="#D9D9D9" />
-        <stop offset="1" stop-color="#833992" stop-opacity="0" />
+        <stop stopColor="#D9D9D9" />
+        <stop offset="0.0001" stopColor="#D9D9D9" />
+        <stop offset="1" stopColor="#833992" stopOpacity="0" />
       </radialGradient>
       <radialGradient
         id="paint2_radial_45_3743"
@@ -445,8 +445,8 @@ const LogoRed = ({ width, height, className }: model) => (
         gradientUnits="userSpaceOnUse"
         gradientTransform="translate(114.946 309.6) rotate(-24.4137) scale(63.4798 85.4283)"
       >
-        <stop stop-color="white" />
-        <stop offset="1" stop-color="#833992" stop-opacity="0" />
+        <stop stopColor="white" />
+        <stop offset="1" stopColor="#833992" stopOpacity="0" />
       </radialGradient>
       <radialGradient
         id="paint3_radial_45_3743"
@@ -456,9 +456,9 @@ const LogoRed = ({ width, height, className }: model) => (
         gradientUnits="userSpaceOnUse"
         gradientTransform="translate(299.539 71.9682) rotate(176.331) scale(132.56 128.973)"
       >
-        <stop stop-color="#D9D9D9" />
-        <stop offset="0.0001" stop-color="#D9D9D9" />
-        <stop offset="1" stop-color="#833992" stop-opacity="0.1" />
+        <stop stopColor="#D9D9D9" />
+        <stop offset="0.0001" stopColor="#D9D9D9" />
+        <stop offset="1" stopColor="#833992" stopOpacity="0.1" />
       </radialGradient>
       <linearGradient
         id="paint4_linear_45_3743"
@@ -468,8 +468,8 @@ const LogoRed = ({ width, height, className }: model) => (
         y2="49.5168"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#E16349" stop-opacity="0.3" />
-        <stop offset="1" stop-color="#E16349" />
+        <stop stopColor="#E16349" stopOpacity="0.3" />
+        <stop offset="1" stopColor="#E16349" />
       </linearGradient>
       <radialGradient
         id="paint5_radial_45_3743"
@@ -479,9 +479,9 @@ const LogoRed = ({ width, height, className }: model) => (
         gradientUnits="userSpaceOnUse"
         gradientTransform="translate(247.931 45.0306) rotate(-170.328) scale(100.95 61.6319)"
       >
-        <stop stop-color="#D9D9D9" />
-        <stop offset="0.0001" stop-color="#D9D9D9" />
-        <stop offset="1" stop-color="#833992" stop-opacity="0" />
+        <stop stopColor="#D9D9D9" />
+        <stop offset="0.0001" stopColor="#D9D9D9" />
+        <stop offset="1" stopColor="#833992" stopOpacity="0" />
       </radialGradient>
       <radialGradient
         id="paint6_radial_45_3743"
@@ -491,9 +491,9 @@ const LogoRed = ({ width, height, className }: model) => (
         gradientUnits="userSpaceOnUse"
         gradientTransform="translate(357.088 151.243) rotate(-175.985) scale(238.829 168.836)"
       >
-        <stop stop-color="white" />
-        <stop offset="0.0001" stop-color="#D9D9D9" />
-        <stop offset="1" stop-color="#833992" stop-opacity="0.2" />
+        <stop stopColor="white" />
+        <stop offset="0.0001" stopColor="#D9D9D9" />
+        <stop offset="1" stopColor="#833992" stopOpacity="0.2" />
       </radialGradient>
     </defs>
   </svg>
