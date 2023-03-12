@@ -5,8 +5,6 @@ import "../styles/globals.scss";
 
 import { QueryClient, QueryClientProvider } from "react-query";
 
-import { ReactQueryDevtools } from "react-query/devtools";
-
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -30,7 +28,6 @@ export default function App({ Component, pageProps }: AppProps) {
         <Layout>
           <Component {...pageProps} />
         </Layout>
-        <ReactQueryDevtools />
       </QueryClientProvider>
     </>
   );

@@ -136,6 +136,15 @@
   position: absolute;
   bottom: 0;
   z-index: 9999;
+
+  &:hover {
+    color: $color-white !important;
+    transition: 0.5s ease;
+
+    svg > path {
+      fill: $color-white !important;
+    }
+  }
 }
 
 .results__iconbutton {
