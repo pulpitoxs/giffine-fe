@@ -90,6 +90,19 @@
   color: $color-white;
   height: 43px;
   padding: 10px;
+  border-radius: 8px;
+
+  &:hover {
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      $colro-blue-light-medium 0%,
+      $card-select-container 100%
+    );
+    border: 1px solid $color-grey-light !important;
+    box-shadow: 0 0 50px $box-shadow-ligh;
+    color: $color-white !important;
+    transition: 0.5s ease;
+  }
 }
 
 .results__sidebabutton {
@@ -98,6 +111,15 @@
   color: $color-white;
   background: $card-select-container;
   height: 43px;
+  border-radius: 8px;
+
+  &:hover {
+    background: $box-shadow-medium;
+    border: 1px solid $color-curate !important;
+    box-shadow: 0 0 50px $box-shadow-ligh;
+    color: $color-white !important;
+    transition: 0.5s ease;
+  }
 }
 
 .results__buttonback {
