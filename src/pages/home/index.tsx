@@ -70,11 +70,13 @@ export function HomePage() {
         <div className={styles.home__innercontent}>
           <div className={styles.home__container}>
             <Message title={titles.description} classAnimete={titles.animate} />
-            <Logo
-              className="animate__animated animate__shakeY"
-              width={"100%"}
-              height={"420"}
-            />
+            <div className={styles.home__boxicon}>
+              <Logo
+                className="animate__animated animate__shakeY"
+                width={"100%"}
+                height={"420"}
+              />
+            </div>
             <div>
               {button && (
                 <Button

@@ -1,13 +1,12 @@
 @import "../../styles/settings/settings";
 
 .eyes {
-  position: absolute;
   z-index: 3;
-  top: 55%;
-  width: 6%;
-  left: 47%;
+  width: 7%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  position: absolute;
 }
 
 .eye {

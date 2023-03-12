@@ -18,6 +18,13 @@
   display: grid;
 }
 
+.home__boxicon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
 .home__button {
   background: $color-mensagge;
   border: 1px solid $color-secondary;
