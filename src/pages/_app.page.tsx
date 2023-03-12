@@ -1,4 +1,5 @@
 import type { AppProps } from "next/app";
+import Head from "next/head";
 import { Layout } from "@components";
 import "../styles/globals.scss";
 
@@ -16,11 +17,21 @@ const queryClient = new QueryClient({
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <QueryClientProvider client={queryClient}>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-      <ReactQueryDevtools />
-    </QueryClientProvider>
+    <>
+      <Head>
+        <title>Giffine - Busca y encuentra...</title>
+        <meta
+          name="description"
+          content="Giffine con puedes encontrar el regalo perfecto para cualquier persona."
+        />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>{" "}
+      <QueryClientProvider client={queryClient}>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+        <ReactQueryDevtools />
+      </QueryClientProvider>
+    </>
   );
 }
