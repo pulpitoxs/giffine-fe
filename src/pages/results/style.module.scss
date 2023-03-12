@@ -1,0 +1,90 @@
+@import "../../styles/settings/settings";
+
+.results__content {
+  min-height: 100vh;
+  background: $color-background;
+}
+
+.results__mensaggecontent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.results__mensaggecontainer {
+  max-width: 700px;
+  text-align: center;
+}
+
+.results__contentbutton {
+  display: block;
+
+  button {
+    width: 200px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
+.results__sidebar {
+  height: 100vh;
+  background: $color-background-transparent;
+  box-shadow: 20px 0 20px $color-transparent;
+  padding: 5px;
+}
+
+.results__sidebarbox {
+  background: $card-select-container;
+  border: 1px solid $color-third;
+  box-shadow: 0 4px 30px $color-transparent;
+  border-radius: 16px;
+  margin: 20px;
+  margin-bottom: 30px;
+}
+
+.results__sidebarimage {
+  padding: 14px;
+
+  img {
+    border-radius: 16px;
+  }
+}
+
+.results__sidebartitle {
+  color: $color-white;
+  font-weight: 500;
+}
+
+.results__sidebarprice {
+  color: $color-fifth;
+  font-weight: 400;
+  font-size: 24px;
+}
+
+.results__sidebarmarca {
+  float: right;
+  margin-right: 20px;
+}
+
+.results__sidebacontentbutton {
+  padding: 0 20px 20px;
+  display: flex;
+  gap: 20px;
+}
+
+.results__sidebabuttonok {
+  width: 100%;
+  background: $card-select-container;
+  border: 1px solid $color-secondary;
+  color: $color-white;
+  height: 43px;
+}
+
+.results__sidebabutton {
+  width: 100%;
+  border: 1px solid $color-curate;
+  color: $color-white;
+  background: $card-select-container;
+  height: 43px;
+}

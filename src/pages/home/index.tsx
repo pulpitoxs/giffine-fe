@@ -5,7 +5,8 @@ import { useMutation } from "react-query";
 
 import Logo from "../../assets/Logo";
 import styles from "./style.module.scss";
-import { Message } from "./components/Message";
+
+import { Message } from "../../components/Message";
 import CardSelect from "./components/CardSelect";
 
 import { fetchRequestGiftApi } from "../api/";
