@@ -1,0 +1,38 @@
+@import "../../styles/settings/settings";
+
+.eyes {
+  position: absolute;
+  z-index: 3;
+  top: 55%;
+  width: 6%;
+  left: 47%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.eye {
+  width: 22.5%;
+  fill: $color-white;
+
+  svg {
+    animation: blink 5s infinite linear;
+  }
+}
+
+@keyframes blink {
+  0% {
+    transform: scaleY(1);
+  }
+
+  50% {
+    transform: scaleY(1);
+  }
+
+  51% {
+    transform: scaleY(0);
+  }
+
+  52% {
+    transform: scaleY(1);
+  }
+}
