@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Button, Form } from "antd";
+import { RollbackOutlined } from "@ant-design/icons";
 
 import { useRouter } from "next/router";
 
@@ -12,6 +13,7 @@ import CardSelect from "./components/CardSelect";
 export function HomePage() {
   const router = useRouter();
   const [cardForm] = Form.useForm();
+
   const [select, setSelect] = useState(false);
   const [button, setButton] = useState(false);
   const [opacityButton, setOpacityButton] = useState(false);
@@ -41,6 +43,17 @@ export function HomePage() {
     }, 2500);
   }, []);
 
+  /*   console.log("songValue", songValue); */
+
+  /*   useEffect(() => {
+    console.log("cs");
+    cardForm.validateFields().then((response) => {
+      if (songValue?.length > 0) {
+        setOpacityButton(true);
+      }
+    });
+  }, [songValue]); */
+
   const hanbldeBegin = () => {
     setTitles({
       description: (
@@ -69,53 +82,57 @@ export function HomePage() {
   return (
     <>
       <div className={styles.home__content}>
-        <div className={styles.home__innercontent}>
-          <div className={styles.home__container}>
-            <div className={styles.home__innercontainer}>
-              <Message
-                title={titles.description}
-                classAnimete={titles.animate}
-              />
-              <Logo
-                className="animate__animated animate__shakeY"
-                width={"100%"}
-                height={"420"}
-              />
-              <div>
-                {button && (
-                  <Button
-                    onClick={hanbldeBegin}
-                    className={`${styles.home__button} animate__animated animate__fadeIn`}
-                  >
-                    Comenzar 🎁
-                  </Button>
-                )}
-              </div>
+        <div className={styles.home__container}>
+          <div className={styles.home__innercontainer}>
+            <Message title={titles.description} classAnimete={titles.animate} />
+            <Logo
+              className="animate__animated animate__shakeY"
+              width={"100%"}
+              height={"420"}
+            />
+            <div>
+              {button && (
+                <Button
+                  onClick={hanbldeBegin}
+                  className={`${styles.home__button} animate__animated animate__fadeIn`}
+                >
+                  Comenzar 🎁
+                </Button>
+              )}
             </div>
-            {select && (
-              <CardSelect
-                setOpacityButton={(data) => setOpacityButton(data)}
-                cardForm={cardForm}
-                title="¿Qué le gusta a esta persona?"
-                subtitle="¿Es mayor de edad esa persona?"
-              />
-            )}
           </div>
+          {select && (
+            <CardSelect
+              setOpacityButton={(data) => setOpacityButton(data)}
+              cardForm={cardForm}
+              title="¿Qué le gusta a esta persona?"
+              subtitle="¿Es mayor de edad esa persona?"
+            />
+          )}
+        </div>
+        {select && (
           <div className={styles.home__footercontainer}>
-            <Button onClick={() => cardForm.resetFields()}>Reiniciar</Button>
             <Button
-              style={{
-                opacity: `${!opacityButton ? "0.1!important" : "1!important"}`,
-                transition: "0.6s ease",
-              }}
+              className={styles.home__buttonback}
+              onClick={() => cardForm.resetFields()}
+            >
+              <RollbackOutlined className={styles.home__iconbutton} />
+              Reiniciar
+            </Button>
+            <Button
+              disabled={!opacityButton}
               onClick={() => handleCardSelect()}
-              className={`${styles.home__button} animate__animated animate__fadeIn`}
+              className={`${
+                styles.home__buttonfootter
+              } animate__animated animate__fadeIn ${
+                !opacityButton ? styles.home__buttonopacity : ""
+              }`}
               htmlType={"submit"}
             >
               Buscar 👀
             </Button>
           </div>
-        </div>
+        )}
       </div>
     </>
   );

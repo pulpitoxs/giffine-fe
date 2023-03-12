@@ -3,10 +3,11 @@
 .home__content {
   min-height: 100vh;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   background: $color-background;
   padding: 20px;
+  flex-direction: column;
 }
 
 .home__innercontent {
@@ -15,7 +16,7 @@
 
 .home__container {
   text-align: center;
-  display: grid;
+  margin-top: 60px;
 }
 
 .home__innercontainer {
@@ -44,15 +45,68 @@
       $colro-blue-light 0%,
       $color-mensagge 100%
     );
-    border: 1px solid $colro-grey-light !important;
+    border: 1px solid $color-grey-light !important;
     box-shadow: 0 0 50px $box-shadow-main;
     color: $color-white !important;
     transition: 0.5s ease;
   }
 }
 
+.home__buttonfootter {
+  background: $color-mensagge;
+  border: 1px solid $color-secondary;
+  box-shadow: 0 0 50px $box-shadow-main;
+  color: $color-white;
+  padding: 12px;
+  width: 150px;
+  height: 55px;
+  border-radius: 16px;
+  font-size: 16px;
+  font-family: $font-family;
+  transition: 0.5s ease;
+
+  &:hover {
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      $colro-blue-light 0%,
+      $color-mensagge 100%
+    );
+    border: 1px solid $color-grey-light !important;
+    box-shadow: 0 0 50px $box-shadow-main;
+    color: $color-white !important;
+    transition: 0.5s ease;
+  }
+}
+
+.home__buttonback {
+  background-color: transparent !important;
+  border: none;
+  color: $color-input-placeholder;
+  padding: 12px;
+  width: 150px;
+  height: 55px;
+  border-radius: 16px;
+  font-size: 16px;
+  font-family: $font-family;
+  transition: 0.5s ease;
+
+  &:hover {
+    color: $color-white !important;
+    transition: 0.5s ease;
+  }
+}
+
+.home__iconbutton {
+  margin-right: 7px;
+}
+
 .home__footercontainer {
   display: flex;
   width: 100%;
   justify-content: space-between;
+}
+
+.home__buttonopacity {
+  opacity: 0.5 !important;
+  transition: 0.5s ease;
 }
