@@ -9,6 +9,9 @@ const nextConfig = {
   publicRuntimeConfig: {
     version,
   },
+  images: {
+    domains: ["i.ibb.co"], //your-external-link-hostname
+  },
 };
 
 module.exports = nextConfig;
