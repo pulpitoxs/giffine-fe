@@ -9,6 +9,7 @@ import styles from "./style.module.scss";
 import { Message } from "../../components/Message";
 import { Loading } from "./components/Loading";
 import { LoadingOk } from "./components/LoadingOk";
+import Arrows from "../../assets/Arrows";
 import Logo from "../../assets/Logo";
 
 import { useRouter } from "next/router";
@@ -84,6 +85,10 @@ export default function Results() {
   return (
     <>
       <div className={styles.results__content}>
+        <Button className={styles.results__buttonback} href="/">
+          <Arrows className={styles.results__iconbutton} />
+          Reiniciar
+        </Button>
         <Row>
           <Col span={16}>
             <Confetti width={width * 0.66} height={height} />
@@ -113,7 +118,9 @@ export default function Results() {
             </div>
           </Col>
           <Col span={8}>
-            <div className={styles.results__sidebar}>
+            <div
+              className={`${styles.results__sidebar} animate__animated animate__fadeInRight`}
+            >
               {randomOption && (
                 <>
                   {randomOption.items.map((item: any, index: number) => (
@@ -121,7 +128,7 @@ export default function Results() {
                       className={styles.results__sidebarbox}
                       key={`${item.id}-${index}`}
                     >
-                      <Row>
+                      <Row className={styles.results__sidebarimagetextbox}>
                         <Col span={6} className={styles.results__sidebarimage}>
                           <Image
                             src={item.img}

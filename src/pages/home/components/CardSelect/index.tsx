@@ -169,6 +169,7 @@ export default function CardSelect({
             }}
             placeholder="Ejemplo: a esta persona le encanta el anime, sobretodo pokemón y Dragon ball, también es programador, tengo un presupuesto de hasta 100$"
             maxLength={100}
+            rows={4}
           />
         </Form.Item>
         <div className={styles.card__selectcontainer}>

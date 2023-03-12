@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { Button, Form } from "antd";
-import { RollbackOutlined } from "@ant-design/icons";
 
 import { useRouter } from "next/router";
 
 import Logo from "../../assets/Logo";
+import Arrows from "../../assets/Arrows";
 import styles from "./style.module.scss";
 
 import { Message } from "../../components/Message";
@@ -105,7 +105,7 @@ export function HomePage() {
               className={styles.home__buttonback}
               onClick={() => cardForm.resetFields()}
             >
-              <RollbackOutlined className={styles.home__iconbutton} />
+              <Arrows className={styles.home__iconbutton} />
               Reiniciar
             </Button>
             <Button

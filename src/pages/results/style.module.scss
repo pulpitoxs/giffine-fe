@@ -3,6 +3,8 @@
 .results__content {
   min-height: 100vh;
   background: $color-background;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .results__mensaggecontent {
@@ -44,11 +46,17 @@
   padding: 12px;
 }
 
+.results__sidebarimagetextbox {
+  margin-bottom: 15px;
+}
+
 .results__sidebarimage {
   padding: 14px;
 
   img {
     border-radius: 16px;
+    width: 100%;
+    height: auto;
   }
 }
 
@@ -69,7 +77,7 @@
 }
 
 .results__sidebacontentbutton {
-  padding: 0 20px 20px;
+  padding: 0 20px 10px;
   display: flex;
   gap: 20px;
 }
@@ -89,4 +97,24 @@
   color: $color-white;
   background: $card-select-container;
   height: 43px;
+}
+
+.results__buttonback {
+  background-color: transparent !important;
+  border: none;
+  color: $color-input-placeholder;
+  padding: 12px;
+  width: 150px;
+  height: 55px;
+  border-radius: 16px;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  transition: 0.5s ease;
+  position: absolute;
+  bottom: 0;
+  z-index: 9999;
+}
+
+.results__iconbutton {
+  margin-right: 7px;
 }
