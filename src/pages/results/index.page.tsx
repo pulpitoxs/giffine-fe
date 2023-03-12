@@ -115,7 +115,7 @@ export default function Results() {
                   {randomOption.items.map((item: any) => (
                     <div className={styles.results__sidebarbox} key={item.id}>
                       <Row>
-                        <Col span={7} className={styles.results__sidebarimage}>
+                        <Col span={6} className={styles.results__sidebarimage}>
                           <Image
                             src={item.img}
                             alt="Producto de meli"
@@ -123,7 +123,7 @@ export default function Results() {
                             height={100}
                           />
                         </Col>
-                        <Col span={17}>
+                        <Col span={18}>
                           <h3 className={styles.results__sidebartitle}>
                             {item.title}
                           </h3>
@@ -140,7 +140,11 @@ export default function Results() {
                         </Col>
                       </Row>
                       <div className={styles.results__sidebacontentbutton}>
-                        <Button className={styles.results__sidebabuttonok}>
+                        <Button
+                          className={styles.results__sidebabuttonok}
+                          href={item.link}
+                          target="_blank"
+                        >
                           Comprar 🤑
                         </Button>
                         <Button className={styles.results__sidebabutton}>
