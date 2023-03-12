@@ -5,17 +5,8 @@ import styles from "./style.module.scss";
 import BoxOnePart from "../../../../assets/BoxOnePart";
 import BoxTwoPart from "../../../../assets/BoxTwoPart";
 
-const canvasStyles = {
-  position: "fixed",
-  pointerEvents: "none",
-  width: "100%",
-  height: "100%",
-  top: 0,
-  left: 0,
-};
-
 export function LoadingOk() {
-  const refAnimationInstance = useRef(null);
+  const refAnimationInstance = useRef<any>(null);
 
   const getInstance = useCallback((instance: any) => {
     refAnimationInstance.current = instance;
@@ -75,7 +66,10 @@ export function LoadingOk() {
           <BoxOnePart
             className={`${styles.loading__icon} animate__animated animate__bounceInDown`}
           />
-          <ReactCanvasConfetti refConfetti={getInstance} style={canvasStyles} />
+          <ReactCanvasConfetti
+            refConfetti={getInstance}
+            className={styles.confetti}
+          />
           <BoxTwoPart
             className="animate__animated 
             animate__bounceIn"

@@ -21,7 +21,7 @@ export default function Results() {
     animate: "animate__fadeIn",
   });
 
-  const data = [
+  const data: any = [
     {
       img: "https://i.ibb.co/09KPd7S/pexels-photo-821651.webp",
       title: "The Calamaro Files - Martin Perez - Gourmet Musical -Libro",
@@ -91,7 +91,7 @@ export default function Results() {
           </Col>
           <Col span={8}>
             <div className={styles.results__sidebar}>
-              {data.map((item) => (
+              {data.map((item: any) => (
                 <div className={styles.results__sidebarbox} key={item.id}>
                   <Row>
                     <Col span={7} className={styles.results__sidebarimage}>
