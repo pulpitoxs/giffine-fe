@@ -39,58 +39,62 @@ export default function CardSelect({
     },
     {
       label: "🇨🇴 CO",
-      value: "MLO",
+      value: "MCO",
     },
     {
       label: "🇸🇻 SV",
       value: "MSV",
     },
     {
-      label: "🇳🇮 MNI",
+      label: "🇳🇮 NI",
       value: "MNI",
     },
     {
-      label: "🇪🇨 MEC",
+      label: "🇪🇨 EC",
       value: "MEC",
     },
     {
-      label: "🇵🇪 MPE",
+      label: "🇵🇪 PE",
       value: "MPE",
     },
     {
-      label: "🇩🇴 MRC",
+      label: "🇩🇴 RC",
       value: "MRC",
     },
     {
-      label: "🇨🇺 MCU",
+      label: "🇨🇺 CU",
       value: "MCU",
     },
     {
-      label: "🇧🇴 MBO",
+      label: "🇧🇴 BO",
       value: "MBO",
     },
     {
-      label: "🇬🇹 MGT",
+      label: "🇬🇹 GT",
       value: "MGT",
     },
     {
-      label: "🇨🇷 MCR",
+      label: "🇨🇷 CR",
       value: "MCR",
     },
     {
-      label: "🇭🇳 MHN",
+      label: "🇵🇦 PA",
+      value: "MCR",
+    },
+    {
+      label: "🇭🇳 HN",
       value: "MHN",
     },
     {
-      label: "🇻🇪 MLV",
+      label: "🇻🇪 VE",
       value: "MLV",
     },
     {
-      label: "🇺🇾 MLU",
+      label: "🇺🇾 UY",
       value: "MLU",
     },
     {
-      label: "🇵🇾 MPY",
+      label: "🇵🇾 PY",
       value: "MPY",
     },
   ];
@@ -105,8 +109,8 @@ export default function CardSelect({
         wrapperCol={{ span: 24 }}
         initialValues={{
           country: "MLC",
-          description: "quiero regalar una laptop rosada con accesorios kawai",
-          adult: true,
+          /*           description: "quiero regalar una laptop rosada con accesorios kawai",
+          adult: true, */
         }}
         //onFinish={handleFinishForm}
         //onFinishFailed={handleFormError}

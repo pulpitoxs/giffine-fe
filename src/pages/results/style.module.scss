@@ -119,3 +119,11 @@
 .results__iconbutton {
   margin-right: 7px;
 }
+
+.results__notfound {
+  color: $color-white;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
