@@ -44,32 +44,33 @@ export default function Results() {
   };
 
   useEffect(() => {
-    fetchRequestGiftApi({
-      older: router.query.older as string,
-      country: router.query.country as string,
-      likes: router.query.likes as string,
-    })
-      .then((response) => {
-        setLoading(false);
-        setLoadingSuccess(true);
-        if (!response.data.response) {
-          router.push(`/error?message=${response.data.message}`);
-        } else {
-          const result = response?.data.data;
-          const randomIndex = Math.floor(
-            Math.random() * result?.boxes.length - 1
-          );
-          const randomItem = result?.boxes[randomIndex];
-          setResult(result);
-          setRandomOption(randomItem);
-          setTimeout(() => {
-            setLoadingSuccess(false);
-          }, 7000);
-        }
+    const url = new URL(window.location.href);
+    const searchParams = Object.fromEntries(url.searchParams.entries());
+
+    if (searchParams) {
+      fetchRequestGiftApi({
+        older: searchParams.older as string,
+        country: searchParams.country as string,
+        likes: searchParams.likes as string,
       })
-      .catch(() => {
-        router.push(`/error?message=ocurrió un error en la consulta...`);
-      });
+        .then((response) => {
+          setLoading(false);
+          setLoadingSuccess(true);
+          if (!response.data.response) {
+            router.push(`/error?message=${response.data.message}`);
+          } else {
+            const result = response?.data.data;
+            setResult(result);
+            setRandomOption(result?.boxes[0]);
+            setTimeout(() => {
+              setLoadingSuccess(false);
+            }, 7000);
+          }
+        })
+        .catch(() => {
+          router.push(`/error?message=ocurrió un error en la consulta...`);
+        });
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -122,8 +123,11 @@ export default function Results() {
             >
               {randomOption && (
                 <>
-                  {randomOption.items.map((item: any) => (
-                    <div className={styles.results__sidebarbox} key={item.id}>
+                  {randomOption.items.map((item: any, index: number) => (
+                    <div
+                      className={styles.results__sidebarbox}
+                      key={`${item.id}-${index}`}
+                    >
                       <Row className={styles.results__sidebarimagetextbox}>
                         <Col span={6} className={styles.results__sidebarimage}>
                           <Image

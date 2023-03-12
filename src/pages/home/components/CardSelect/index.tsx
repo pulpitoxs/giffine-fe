@@ -94,7 +94,6 @@ export default function CardSelect({
       value: "MPY",
     },
   ];
-  console.log("o");
 
   return (
     <div className={styles.card__container}>
@@ -106,8 +105,8 @@ export default function CardSelect({
         wrapperCol={{ span: 24 }}
         initialValues={{
           country: "MLC",
-          /*           description: "quiero regalar una galaxia entera",
-          adult: true, */
+          description: "quiero regalar una laptop rosada con accesorios kawai",
+          adult: true,
         }}
         //onFinish={handleFinishForm}
         //onFinishFailed={handleFormError}
