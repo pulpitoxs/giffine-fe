@@ -26,14 +26,75 @@ export default function CardSelect({
 
   const selectOptions = [
     {
-      label: "⚽ CL",
+      label: "🇨🇱 CL",
       value: "MLC",
     },
     {
-      label: "⚽ AR",
+      label: "🇦🇷 AR",
       value: "MLA",
     },
+    {
+      label: "🇲🇽 MX",
+      value: "MLM",
+    },
+    {
+      label: "🇨🇴 CO",
+      value: "MLO",
+    },
+    {
+      label: "🇸🇻 SV",
+      value: "MSV",
+    },
+    {
+      label: "🇳🇮 MNI",
+      value: "MNI",
+    },
+    {
+      label: "🇪🇨 MEC",
+      value: "MEC",
+    },
+    {
+      label: "🇵🇪 MPE",
+      value: "MPE",
+    },
+    {
+      label: "🇩🇴 MRC",
+      value: "MRC",
+    },
+    {
+      label: "🇨🇺 MCU",
+      value: "MCU",
+    },
+    {
+      label: "🇧🇴 MBO",
+      value: "MBO",
+    },
+    {
+      label: "🇬🇹 MGT",
+      value: "MGT",
+    },
+    {
+      label: "🇨🇷 MCR",
+      value: "MCR",
+    },
+    {
+      label: "🇭🇳 MHN",
+      value: "MHN",
+    },
+    {
+      label: "🇻🇪 MLV",
+      value: "MLV",
+    },
+    {
+      label: "🇺🇾 MLU",
+      value: "MLU",
+    },
+    {
+      label: "🇵🇾 MPY",
+      value: "MPY",
+    },
   ];
+  console.log("o");
 
   return (
     <div className={styles.card__container}>
@@ -45,8 +106,8 @@ export default function CardSelect({
         wrapperCol={{ span: 24 }}
         initialValues={{
           country: "MLC",
-          description: "quiero regalar una galaxia entera",
-          adult: true,
+          /*           description: "quiero regalar una galaxia entera",
+          adult: true, */
         }}
         //onFinish={handleFinishForm}
         //onFinishFailed={handleFormError}
@@ -56,7 +117,7 @@ export default function CardSelect({
         <div className={styles.card__contenttitle}>
           <div className={styles.card__title}>{title}</div>
           <Form.Item
-            style={{ width: "85px" }}
+            style={{ width: "95px" }}
             name="country"
             rules={[
               {
@@ -65,7 +126,19 @@ export default function CardSelect({
               },
             ]}
           >
-            <Select placeholder="Country">
+            <Select
+              placeholder="Country"
+              onChange={() => {
+                cardForm
+                  .validateFields()
+                  .then(() => {
+                    setOpacityButton(true);
+                  })
+                  .catch(() => {
+                    setOpacityButton(false);
+                  });
+              }}
+            >
               {selectOptions.map((item, index) => (
                 <Option value={item.value} key={index}>
                   {item.label}
@@ -86,8 +159,14 @@ export default function CardSelect({
         >
           <Input.TextArea
             onChange={() => {
-              console.log("trigger");
-              setOpacityButton(true);
+              cardForm
+                .validateFields()
+                .then(() => {
+                  setOpacityButton(true);
+                })
+                .catch(() => {
+                  setOpacityButton(false);
+                });
             }}
             placeholder="Ejemplo: a esta persona le encanta el anime, sobretodo pokemón y Dragon ball, también es programador, tengo un presupuesto de hasta 100$"
             maxLength={100}
@@ -104,7 +183,18 @@ export default function CardSelect({
               },
             ]}
           >
-            <Radio.Group>
+            <Radio.Group
+              onChange={() => {
+                cardForm
+                  .validateFields()
+                  .then(() => {
+                    setOpacityButton(true);
+                  })
+                  .catch(() => {
+                    setOpacityButton(false);
+                  });
+              }}
+            >
               <Radio value={false}>No</Radio>
               <Radio value={true}>Si</Radio>
             </Radio.Group>
