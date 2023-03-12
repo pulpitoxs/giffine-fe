@@ -46,9 +46,17 @@ export default function Results() {
 
     if (!Number.isNaN(index)) {
       setTimeout(() => {
-        setRandomOption({ ...items?.boxes[index] });
+        setRandomOption({ ...items?.[typeBox]?.[index] });
       }, 250);
     } else setEmptyResult(false);
+  };
+
+  const handleDeleteProduct = (item: any) => {
+    const result = randomOption.items.filter(
+      (element: any) => element.id !== item.id
+    );
+    const filterOption = { ...randomOption, items: result };
+    setRandomOption(filterOption);
   };
 
   useEffect(() => {
@@ -172,7 +180,10 @@ export default function Results() {
                         >
                           Comprar 🤑
                         </Button>
-                        <Button className={styles.results__sidebabutton}>
+                        <Button
+                          onClick={() => handleDeleteProduct(item)}
+                          className={styles.results__sidebabutton}
+                        >
                           Eliminar 💩
                         </Button>
                       </div>
