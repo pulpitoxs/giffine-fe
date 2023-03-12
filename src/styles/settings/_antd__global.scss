@@ -31,3 +31,17 @@
 .ant-radio-wrapper {
   color: $color-white;
 }
+
+.ant-radio-wrapper:last-child {
+  margin-right: 0;
+}
+
+.ant-radio-inner {
+  background-color: transparent !important;
+  border-color: $color-input-placeholder !important;
+}
+
+.ant-radio-checked .ant-radio-inner {
+  border-color: $color-secondary !important;
+  background-color: $color-secondary !important;
+}

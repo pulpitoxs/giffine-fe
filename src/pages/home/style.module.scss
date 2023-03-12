@@ -18,6 +18,13 @@
   display: grid;
 }
 
+.home__innercontainer {
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+  margin: auto;
+}
+
 .home__button {
   background: $color-mensagge;
   border: 1px solid $color-secondary;
@@ -29,6 +36,7 @@
   border-radius: 16px;
   font-size: 18px;
   font-family: $font-family;
+  transition: 0.5s ease;
 
   &:hover {
     background: radial-gradient(
@@ -39,6 +47,7 @@
     border: 1px solid $colro-grey-light !important;
     box-shadow: 0 0 50px $box-shadow-main;
     color: $color-white !important;
+    transition: 0.5s ease;
   }
 }
 

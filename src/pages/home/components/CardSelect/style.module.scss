@@ -10,7 +10,7 @@
   width: 100%;
   max-width: 550px;
   margin: auto;
-  padding: 24px;
+  padding: 24px 24px 0;
 }
 
 .card__contenttitle {
@@ -37,6 +37,7 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 17px;
+  margin-top: 5px;
 }
 
 .card__selectcontainer {
