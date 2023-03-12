@@ -43,17 +43,6 @@ export function HomePage() {
     }, 2500);
   }, []);
 
-  /*   console.log("songValue", songValue); */
-
-  /*   useEffect(() => {
-    console.log("cs");
-    cardForm.validateFields().then((response) => {
-      if (songValue?.length > 0) {
-        setOpacityButton(true);
-      }
-    });
-  }, [songValue]); */
-
   const hanbldeBegin = () => {
     setTitles({
       description: (
