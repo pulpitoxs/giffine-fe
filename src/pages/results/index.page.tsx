@@ -27,7 +27,7 @@ export default function Results() {
     description: (
       <>
         ¡Genial! Aquí te presento algunas ideas de regalos que podrían ser
-        perfectos para tu pareja considerando sus intereses:
+        perfectos para esa persona especial, considerando sus intereses.
       </>
     ),
     animate: "animate__fadeIn",
