@@ -171,7 +171,7 @@ export default function CardSelect({
                   setOpacityButton(false);
                 });
             }}
-            placeholder="Ejemplo: a esta persona le encanta el anime, sobretodo pokemón y Dragon ball, también es programador, tengo un presupuesto de hasta 100$"
+            placeholder="Ejemplo: a esta persona le encanta el anime, sobretodo pokemón y Dragon ball, también es programador, invertiré en esa persona especial..."
             maxLength={100}
             rows={4}
           />
