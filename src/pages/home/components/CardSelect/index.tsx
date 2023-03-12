@@ -8,6 +8,7 @@ export interface CardSelectProps {
   title: string;
   subtitle: string;
   cardForm: FormInstance;
+  setOpacityButton: (data: boolean) => void;
 }
 
 export interface CardFormProps {
@@ -19,6 +20,7 @@ export default function CardSelect({
   title,
   subtitle,
   cardForm,
+  setOpacityButton,
 }: CardSelectProps) {
   const { Option } = Select;
 
@@ -32,6 +34,8 @@ export default function CardSelect({
       value: "venezuela",
     },
   ];
+
+  console.log("aaererewrwea");
 
   return (
     <div className={styles.card__container}>
@@ -79,15 +83,17 @@ export default function CardSelect({
           ]}
         >
           <Input.TextArea
+            onChange={() => {
+              console.log("trigger");
+              setOpacityButton(true);
+            }}
             placeholder="Ejemplo: a esta persona le encanta el anime, sobretodo pokemón y Dragon ball, también es programador, tengo un presupuesto de hasta 100$"
             maxLength={100}
           />
-        </Form.Item>{" "}
+        </Form.Item>
         <div className={styles.card__selectcontainer}>
           <div className={styles.card__subtitle}>{subtitle}</div>
           <Form.Item
-            wrapperCol={{ span: 20 }}
-            style={{ width: "100%" }}
             name="adult"
             rules={[
               {
