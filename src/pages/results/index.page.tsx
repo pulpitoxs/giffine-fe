@@ -20,6 +20,7 @@ export default function Results() {
   const [width, height] = useWindowSize();
   const router = useRouter();
   const [loading, setLoading] = useState(true);
+  const [emptyResult, setEmptyResult] = useState(true);
   const [loadingSuccess, setLoadingSuccess] = useState(true);
   const [titles] = useState({
     description: (
@@ -33,14 +34,20 @@ export default function Results() {
   const [results, setResult] = useState(null);
   const [randomOption, setRandomOption] = useState<any>(null);
 
-  const handleGenerateResults = (data: any) => {
+  const handleGenerateResults = (data: any, extraBox: boolean) => {
+    const typeBox =
+      extraBox && router.query.older === "true" ? "mistery_box" : "boxes";
     setRandomOption(null);
+    setEmptyResult(true);
     const items = data;
-    const index = Math.floor(Math.random() * items?.boxes.length);
 
-    setTimeout(() => {
-      setRandomOption({ ...items?.boxes[index] });
-    }, 250);
+    const index = Math.floor(Math.random() * items?.[typeBox]?.length);
+
+    if (!Number.isNaN(index)) {
+      setTimeout(() => {
+        setRandomOption({ ...items?.boxes[index] });
+      }, 250);
+    } else setEmptyResult(false);
   };
 
   useEffect(() => {
@@ -105,12 +112,15 @@ export default function Results() {
                 />
                 <div className={styles.results__contentbutton}>
                   <Button
-                    onClick={() => handleGenerateResults(results)}
+                    onClick={() => handleGenerateResults(results, false)}
                     className={styles.results__sidebabuttonok}
                   >
                     Dame más opciones 😃
                   </Button>
-                  <Button className={styles.results__sidebabutton}>
+                  <Button
+                    onClick={() => handleGenerateResults(results, true)}
+                    className={styles.results__sidebabutton}
+                  >
                     No hagas clic aquí 💀
                   </Button>
                 </div>
@@ -121,7 +131,7 @@ export default function Results() {
             <div
               className={`${styles.results__sidebar} animate__animated animate__fadeInRight`}
             >
-              {randomOption && (
+              {randomOption ? (
                 <>
                   {randomOption.items.map((item: any, index: number) => (
                     <div
@@ -167,6 +177,16 @@ export default function Results() {
                       </div>
                     </div>
                   ))}
+                </>
+              ) : (
+                <>
+                  {!emptyResult ? (
+                    <div className={styles.results__notfound}>
+                      No hay Resultados para mostrar...
+                    </div>
+                  ) : (
+                    <div className={styles.results__notfound}>Cargando...</div>
+                  )}
                 </>
               )}
             </div>
