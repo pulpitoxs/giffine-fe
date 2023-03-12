@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Col, Row, Button } from "antd";
 
+import Image from "next/image";
+
 import styles from "./style.module.scss";
 
 import { Message } from "../../components/Message";
+import { Loading } from "./components/Loading";
+import { LoadingOk } from "./components/LoadingOk";
 import Logo from "../../assets/Logo";
 
 import { useRouter } from "next/router";
@@ -12,6 +16,8 @@ import { fetchRequestGiftApi } from "../api";
 
 export default function Results() {
   const router = useRouter();
+  const [loading, setLoading] = useState(true);
+  const [loadingSuccess, setLoadingSuccess] = useState(true);
   const [titles] = useState({
     description: (
       <>
@@ -41,6 +47,8 @@ export default function Results() {
       likes: router.query.likes as string,
     })
       .then((response) => {
+        setLoading(false);
+        setLoadingSuccess(true);
         if (!response.data.response) {
           router.push(`/error?message=${response.data.message}`);
         } else {
@@ -51,12 +59,24 @@ export default function Results() {
           const randomItem = result?.boxes[randomIndex];
           setResult(result);
           setRandomOption(randomItem);
+          setTimeout(() => {
+            setLoadingSuccess(false);
+          }, 7000);
         }
       })
       .catch(() => {
         router.push(`/error?message=ocurrió un error en la consulta...`);
       });
-  }, [router]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  if (loading) {
+    return <Loading />;
+  }
+
+  if (loadingSuccess) {
+    return <LoadingOk />;
+  }
 
   return (
     <>
@@ -96,12 +116,12 @@ export default function Results() {
                     <div className={styles.results__sidebarbox} key={item.id}>
                       <Row>
                         <Col span={7} className={styles.results__sidebarimage}>
-                          {/* <Image
+                          <Image
                             src={item.img}
                             alt="Producto de meli"
                             width={100}
                             height={100}
-                          /> */}
+                          />
                         </Col>
                         <Col span={17}>
                           <h3 className={styles.results__sidebartitle}>
@@ -110,13 +130,13 @@ export default function Results() {
                           <span className={styles.results__sidebarprice}>
                             {item.price}
                           </span>
-                          {/*  <Image
+                          <Image
                             src="https://i.ibb.co/xH09JzY/image-2.png"
                             alt="Producto de meli"
                             width={31}
                             height={21}
                             className={styles.results__sidebarmarca}
-                          /> */}
+                          />
                         </Col>
                       </Row>
                       <div className={styles.results__sidebacontentbutton}>
