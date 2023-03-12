@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Button } from "antd";
 import { useRouter } from "next/router";
+import Image from "next/image";
 
-import LogoRed from "../../assets/LogoRed";
 import styles from "./style.module.scss";
 
 import { Message } from "../../components/Message";
@@ -19,10 +19,11 @@ export default function HomePage() {
       <div className={styles.error__content}>
         <div className={styles.error__container}>
           <Message title={titles.description} classAnimete={titles.animate} />
-          <LogoRed
-            className="animate__animated animate__shakeY"
-            width={"100%"}
-            height={"420"}
+          <Image
+            src="https://i.ibb.co/Wy6Tr3m/cara2-1.gif"
+            alt="Landscape picture"
+            width={476}
+            height={420}
           />
           <div>
             <Button

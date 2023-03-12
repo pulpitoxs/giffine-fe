@@ -11,7 +11,7 @@ export function Message({ title, classAnimete }: MessageProps) {
       <div
         className={`${styles.message__content} animate__animated ${classAnimete}`}
       >
-        <h1 className={styles.message__title}>{title}</h1>
+        <h3 className={styles.message__title}>{title}</h3>
       </div>
     </>
   );
